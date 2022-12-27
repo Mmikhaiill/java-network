@@ -17,6 +17,9 @@
         <module>lesson5</module>
         <module>lesson6</module>
         <module>lesson7</module>
+        <module>final-project</module>
+        <module>final-project/Server</module>
+        <module>final-project/Client</module>
     </modules>
 
     <properties>
