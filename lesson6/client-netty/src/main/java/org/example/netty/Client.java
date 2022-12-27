@@ -21,12 +21,12 @@ public class Client {
 
         EventLoopGroup group = new NioEventLoopGroup();
         try {
-            Bootstrap b = new Bootstrap();
-            b.group(group)
+            Bootstrap bootstrap = new Bootstrap();
+            bootstrap.group(group)
                     .channel(NioSocketChannel.class)
                     .handler(new ClientChannelInitializer());
 
-            ChannelFuture f = b.connect(HOST, PORT).sync();
+            ChannelFuture channelFuture = bootstrap.connect(HOST, PORT).sync();
 
             ChannelFuture lastWriteFuture = null;
             while (true) {
@@ -35,7 +35,7 @@ public class Client {
                     break;
                 }
 
-                Channel channel = f.sync().channel();
+                Channel channel = channelFuture.sync().channel();
                 lastWriteFuture = channel.writeAndFlush(input);
             }
 

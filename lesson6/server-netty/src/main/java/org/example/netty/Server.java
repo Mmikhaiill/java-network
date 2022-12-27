@@ -29,15 +29,15 @@ public class Server {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
 
-            ServerBootstrap b = new ServerBootstrap();
-            b.group(bossGroup, workerGroup)
+            ServerBootstrap bootstrap = new ServerBootstrap();
+            bootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
                     .handler(new LoggingHandler(LogLevel.INFO))
                     .childHandler(new ServerChannelInitializer());
 
-            ChannelFuture f = b.bind(PORT).sync();
+            ChannelFuture channelFuture = bootstrapo.bind(PORT).sync();
 
-            f.channel().closeFuture().sync();
+            channelFuture.channel().closeFuture().sync();
 
         } finally {
             bossGroup.shutdownGracefully();
