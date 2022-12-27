@@ -7,28 +7,30 @@
         <groupId>org.example</groupId>
         <artifactId>java-network</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>lesson6</artifactId>
+    <groupId>org.example.netty</groupId>
+    <artifactId>server-netty</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <maven-assembly-plugin.version>3.4.2</maven-assembly-plugin.version>
-        <io.netty.version>4.1.85.Final</io.netty.version>
     </properties>
-
-
     <dependencies>
-
         <dependency>
             <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>${io.netty.version}</version>
+            <artifactId>netty-transport</artifactId>
+            <version>4.1.85.Final</version>
+            <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-handler</artifactId>
+            <version>4.1.85.Final</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>

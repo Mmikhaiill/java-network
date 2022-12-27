@@ -17,6 +17,8 @@
         <module>lesson5</module>
         <module>lesson6</module>
         <module>lesson7</module>
+        <module>lesson6/client-netty</module>
+        <module>lesson6/server-netty</module>
     </modules>
 
     <properties>
